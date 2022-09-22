@@ -29,11 +29,11 @@ export class HomeComponent implements OnInit {
       .subscribe(
         res => {
 
-          const courses: Course[] = res["payload"].sort(sortCoursesBySeqNo);
+          const courses: Course[] = res['payload'].sort(sortCoursesBySeqNo);
 
-          this.beginnerCourses = courses.filter(course => course.category == "BEGINNER");
+          this.beginnerCourses = courses.filter(course => course.category === 'BEGINNER');
 
-          this.advancedCourses = courses.filter(course => course.category == "ADVANCED");
+          this.advancedCourses = courses.filter(course => course.category === 'ADVANCED');
 
         });
 
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "400px";
+    dialogConfig.width = '400px';
 
     dialogConfig.data = course;
 
